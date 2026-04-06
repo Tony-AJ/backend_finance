@@ -1,6 +1,6 @@
 import User from '../models/User.js';
 
-// @desc    Get all users
+//Get all users
 export const getUsers = async (req, res, next) => {
     try {
         const users = await User.find();
@@ -10,7 +10,7 @@ export const getUsers = async (req, res, next) => {
     }
 };
 
-// @desc    Get single user
+//Get single user
 export const getUser = async (req, res, next) => {
     try {
         const user = await User.findById(req.params.id);
@@ -23,7 +23,7 @@ export const getUser = async (req, res, next) => {
     }
 };
 
-// @desc    Update user
+//Update user
 export const updateUser = async (req, res, next) => {
     try {
         const { role, status } = req.body;
@@ -41,7 +41,7 @@ export const updateUser = async (req, res, next) => {
     }
 };
 
-// @desc    Delete user
+//Delete user
 export const deleteUser = async (req, res, next) => {
     try {
         const user = await User.findByIdAndDelete(req.params.id);

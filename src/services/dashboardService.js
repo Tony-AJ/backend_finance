@@ -1,6 +1,6 @@
 import FinancialRecord from '../models/FinancialRecord.js';
 
-// @desc    Get dashboard summary
+//Get dashboard summary
 export const getSummary = async (req, res, next) => {
     try {
         const stats = await FinancialRecord.aggregate([
@@ -33,7 +33,7 @@ export const getSummary = async (req, res, next) => {
     }
 };
 
-// @desc    Get category totals
+//Get category totals
 export const getCategoryTotals = async (req, res, next) => {
     try {
         const categoryTotals = await FinancialRecord.aggregate([
@@ -56,7 +56,7 @@ export const getCategoryTotals = async (req, res, next) => {
     }
 };
 
-// @desc    Get recent activity
+//Get recent activity
 export const getRecentActivity = async (req, res, next) => {
     try {
         const recent = await FinancialRecord.find()

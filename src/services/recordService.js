@@ -1,6 +1,6 @@
 import FinancialRecord from '../models/FinancialRecord.js';
 
-// @desc    Get all records with filtering
+//Get all records with filtering
 export const getRecords = async (req, res, next) => {
     try {
         let query;
@@ -32,7 +32,7 @@ export const getRecords = async (req, res, next) => {
     }
 };
 
-// @desc    Get single record
+//Get single record
 export const getRecord = async (req, res, next) => {
     try {
         const record = await FinancialRecord.findById(req.params.id).populate('user', 'name email');
@@ -45,7 +45,7 @@ export const getRecord = async (req, res, next) => {
     }
 };
 
-// @desc    Create record
+//Create record
 export const createRecord = async (req, res, next) => {
     try {
         req.body.user = req.user.id;
@@ -56,7 +56,7 @@ export const createRecord = async (req, res, next) => {
     }
 };
 
-// @desc    Update record
+//Update record
 export const updateRecord = async (req, res, next) => {
     try {
         let record = await FinancialRecord.findByIdAndUpdate(req.params.id, req.body, {
@@ -72,7 +72,7 @@ export const updateRecord = async (req, res, next) => {
     }
 };
 
-// @desc    Delete record
+//Delete record
 export const deleteRecord = async (req, res, next) => {
     try {
         const record = await FinancialRecord.findById(req.params.id);

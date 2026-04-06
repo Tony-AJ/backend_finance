@@ -1,7 +1,7 @@
 import User from '../models/User.js';
 import { generateToken } from '../utils/token.js';
 
-// @desc    Register user
+//Register user
 export const register = async (req, res, next) => {
     try {
         const { name, email, password, role } = req.body;
@@ -13,7 +13,7 @@ export const register = async (req, res, next) => {
     }
 };
 
-// @desc    Login user
+//Login user
 export const login = async (req, res, next) => {
     try {
         const { email, password } = req.body;
@@ -38,7 +38,7 @@ export const login = async (req, res, next) => {
     }
 };
 
-// @desc    Get current logged in user
+//Get current logged in user
 export const getMe = async (req, res, next) => {
     try {
         const user = await User.findById(req.user.id);
